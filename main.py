@@ -6,7 +6,6 @@ def centerStatement():
     centerNameDate = input("Center name and bill Period (This will be the name of the Excel file): ")
 
     def readingData(fileName):
-        #directory la iruka individual files ah read panni, extracting data
         with open(fileName) as file:
             lines = file.readlines()
             top = lines[5].split()
@@ -15,8 +14,6 @@ def centerStatement():
             name = top[3]
             amount = bottom[-1]
             return {'code':int(code), 'name':name, 'amount':float(amount)}
-    # In which format we need data being set above
-    # Storing data from all the files (in directory in this "overall list")
 
     def writeToExcelSheet(data,loc,centerName):
         wb = Workbook()
